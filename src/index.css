@@ -3,10 +3,17 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+  --accent: 0 0% 67%;
+  --border: 0 0% 87%;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --accent: 0 0% 33%;
+    --border: 0 0% 33%;
+  }
 }

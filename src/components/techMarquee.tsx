@@ -20,7 +20,7 @@ const TechMarquee: React.FC<TechMarqueeProps> = ({ icons, speed }) => {
         {Object.entries(icons).map(([name, icon]) => {
           return (
             <div key={name} className="flex items-center gap-1">
-              <div className="w-8 h-8">{icon.icon}</div>
+              <div className="w-8 h-8">{icon.icon()}</div>
               <p className="font-semibold">{icon.name}</p>
             </div>
           );
@@ -30,7 +30,7 @@ const TechMarquee: React.FC<TechMarqueeProps> = ({ icons, speed }) => {
         {Object.entries(icons).map(([name, icon]) => {
           return (
             <div key={name} className="flex items-center gap-1">
-              <div className="w-8 h-8">{icon.icon}</div>
+              <div className="w-8 h-8">{icon.icon()}</div>
               <p className="font-semibold">{icon.name}</p>
             </div>
           );

@@ -14,25 +14,25 @@ function Index() {
   const secondHalfIcons = Object.fromEntries(Object.entries(techologyIcons).slice(8, iconsLength));
   return (
     <div className="space-y-10">
-      <section className="border rounded-lg p-4">
+      <section className="border border-accent rounded-lg p-4">
         <div className="flex items-center justify-between max-w-screen-xl mx-auto">
           <h1 className="text-2xl sm:text-4xl font-bold">Nathan Cuevas</h1>
           <div className="p-2 flex gap-3">
-            <div className="border rounded-lg p-1">
-              <a href="mailto:nathanacuevas97@gmail.com" target="_blank">
-                {icons.mail.icon}
+            <div className="border border-accent rounded-lg p-1">
+              <a href="mailto:nathanacuevas97@gmail.com" title="email" target="_blank">
+                {icons.mail.icon()}
               </a>
             </div>
-            <div className="border rounded-lg p-1">
-              <a href="https://github.com/NateAyye" target="_blank">
-                {icons.github.icon}
+            <div className="border border-accent rounded-lg p-1">
+              <a href="https://github.com/NateAyye" title="github" target="_blank">
+                {icons.github.icon()}
               </a>
             </div>
           </div>
         </div>
         <p className="flex items-center gap-1">
-          {icons.locationPin.icon}
-          California, USA
+          {icons.locationPin.icon()}
+          California, United States
         </p>
         <p className="pt-3">
           I'm a Full-Stack Web Developer. I specialize in React, TypeScript, and Node.js. I'm always
@@ -40,9 +40,26 @@ function Index() {
         </p>
       </section>
       <section>
-        <h2 className="text-4xl font-bold">What I work with</h2>
+        <h2 className="text-4xl font-bold my-5">What I work with</h2>
         <TechMarquee icons={firstHalfIcons} speed={'fast'} />
         <TechMarquee icons={secondHalfIcons} speed={'slow'} />
+      </section>
+      <section>
+        <h2 className="text-4xl font-bold my-5">Experience</h2>
+        <div className="space-y-4">
+          <div className="border rounded-lg p-4">
+            <h3 className="text-2xl font-bold">Full-Stack Web Developer</h3>
+            <p>Freelance</p>
+            <p>2021 - Present</p>
+            <p>Building websites and web applications for clients.</p>
+          </div>
+          <div className="border rounded-lg p-4">
+            <h3 className="text-2xl font-bold">Full-Stack Web Developer</h3>
+            <p>Freelance</p>
+            <p>2021 - Present</p>
+            <p>Building websites and web applications for clients.</p>
+          </div>
+        </div>
       </section>
     </div>
   );

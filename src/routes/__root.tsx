@@ -6,9 +6,12 @@ export const Route = createRootRoute({
     return (
       <div>
         <header>
-          <div className="flex items-center justify-between max-w-screen-xl mx-auto px-8">
-            <Link to="/">Nathan Cuevas</Link>
-            <div className="p-2 flex gap-6">
+          <div className="flex flex-col sm:flex-row gap-3 py-2 justify-between max-w-screen-xl mx-auto px-8">
+            <Link className="font-bold text-lg sm:underline underline-offset-2" to="/">
+              Nathan Cuevas
+            </Link>
+            <hr className="w-[150%] -translate-x-[25%] visible sm:sr-only" />
+            <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row gap-3 sm:gap-6 ">
               <Link to="/my-work" className="[&.active]:font-bold">
                 My Work
               </Link>

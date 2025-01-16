@@ -11,7 +11,7 @@ function Index() {
     <div className="space-y-10">
       <section className="border rounded-lg p-4">
         <div className="flex items-center justify-between max-w-screen-xl mx-auto">
-          <h1 className="text-4xl font-bold">Nathan Cuevas</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold">Nathan Cuevas</h1>
           <div className="p-2 flex gap-3">
             <div className="border rounded-lg p-1">
               <a href="mailto:nathanacuevas97@gmail.com" target="_blank">

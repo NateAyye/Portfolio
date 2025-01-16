@@ -5,14 +5,16 @@ interface TechMarqueeProps {
   icons: {
     [key: string]: Icon;
   };
+  speed: 'slow' | 'normal' | 'fast';
 }
 
-const TechMarquee: React.FC<TechMarqueeProps> = ({ icons }) => {
+const TechMarquee: React.FC<TechMarqueeProps> = ({ icons, speed }) => {
   const marqueeRef = React.useRef<HTMLDivElement>(null);
+
   return (
     <div
       ref={marqueeRef}
-      className="group flex overflow-hidden p-2 [--duration:30s] [--gap:1rem] [gap:var(--gap)] flex-row relative"
+      className={`group flex overflow-hidden p-2 ${speed === 'slow' ? '[--duration:33s]' : speed === 'normal' ? '[--duration:30s]' : '[--duration:28s]'} [--gap:1rem] [gap:var(--gap)] flex-row relative`}
     >
       <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
         {Object.entries(icons).map(([name, icon]) => {

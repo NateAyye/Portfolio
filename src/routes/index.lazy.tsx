@@ -7,6 +7,11 @@ export const Route = createLazyFileRoute('/')({
 });
 
 function Index() {
+  const iconsLength = Object.keys(techologyIcons).length;
+  const firstHalfIcons = Object.fromEntries(
+    Object.entries(techologyIcons).slice(0, iconsLength / 2),
+  );
+  const secondHalfIcons = Object.fromEntries(Object.entries(techologyIcons).slice(8, iconsLength));
   return (
     <div className="space-y-10">
       <section className="border rounded-lg p-4">
@@ -36,7 +41,8 @@ function Index() {
       </section>
       <section>
         <h2 className="text-4xl font-bold">What I work with</h2>
-        <TechMarquee icons={techologyIcons} />
+        <TechMarquee icons={firstHalfIcons} speed={'fast'} />
+        <TechMarquee icons={secondHalfIcons} speed={'slow'} />
       </section>
     </div>
   );

@@ -13,7 +13,7 @@ function RouteComponent() {
         Feel free to reach out to me via Email, Discord or Instagram. I usually respond within a few
         days
       </p>
-      <div className="flex justify-around gap-5 mt-5">
+      <div className="flex flex-col sm:flex-row justify-around gap-5 mt-5">
         <a
           href="https://discord.gg/bSGCcn9gFj"
           target="_blank"

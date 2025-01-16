@@ -1,3 +1,5 @@
+import svgenImage from './assets/images/svgen.png';
+import vsCodeThemeImage from './assets/images/vscodeTheme.png';
 export interface Link {
   name: string;
   link: string;
@@ -19,17 +21,20 @@ export interface Personal {
   linkedin: Link;
 }
 
+export interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  imageUrl: string;
+  repository: Link;
+  link1?: Link;
+  link2?: Link;
+}
+
 export interface Info {
   personal: Personal;
   experience: Experience[];
-  projects: {
-    title: string;
-    description: string;
-    tech: string[];
-    repository: Link;
-    link1?: Link;
-    link2?: Link;
-  }[];
+  projects: Project[];
 }
 
 export const info: Info = {
@@ -69,7 +74,8 @@ export const info: Info = {
       title: 'Custom VS Code Theme',
       description:
         'My custom VS Code theme that I use for my self and have published on the visual studio marketplace with over 1,200 installs.',
-      tech: ['Github', 'VSCode', 'Node.js'],
+      tech: ['github', 'vscode', 'nodejs'],
+      imageUrl: vsCodeThemeImage,
       repository: {
         name: 'Custom VS Code Theme',
         link: 'https://github.com/NateAyye/custom-github-dark-theme',
@@ -83,7 +89,8 @@ export const info: Info = {
       title: 'SVG Placeholder Generator',
       description:
         'A simple svg logo generator based on only 4 simple questions. Used this project to learn more about npm and publish my own package.',
-      tech: ['Github', 'JavaScript', 'Node.js', 'NPM', 'Jest'],
+      tech: ['github', 'javascript', 'nodejs', 'npm', 'jest'],
+      imageUrl: svgenImage,
       repository: {
         name: 'SVG Placeholder Generator',
         link: 'https://github.com/NateAyye/svg-logo-maker',

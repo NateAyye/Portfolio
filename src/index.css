@@ -5,7 +5,10 @@
 :root {
   --background: 0 0% 98%;
   --foreground: 0 0% 10%;
+  --primary: 258 100% 64%;
+  --secondary: 157 100% 65%;
   --accent: 0 0% 67%;
+
   --border: 0 0% 87%;
 }
 
@@ -13,6 +16,8 @@
   :root {
     --background: 0 0% 10%;
     --foreground: 0 0% 98%;
+    --primary: 263 58% 47%;
+    --secondary: 152 65% 55%;
     --accent: 0 0% 33%;
     --border: 0 0% 33%;
   }

@@ -6,7 +6,7 @@ const ExperienceCard: React.FC<Experience> = ({ title, company, date, descriptio
     <div className="border rounded-lg p-4">
       <h3 className="text-2xl font-bold">{title}</h3>
       <p>{company}</p>
-      <p>{date}</p>
+      <p className='text-sm italic text-accent'>{date}</p>
       <p>{description}</p>
     </div>
   );

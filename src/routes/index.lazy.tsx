@@ -4,6 +4,7 @@ import PersonalCard from '../components/personalCard';
 import TechMarquee from '../components/techMarquee';
 import { info } from '../data';
 import { techologyIcons } from '../icons';
+import ProjectCard from '../components/projectCard';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -28,6 +29,14 @@ function Index() {
         <div className="space-y-4">
           {info.experience.map((experience) => (
             <ExperienceCard key={experience.title} {...experience} />
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-4xl font-bold my-5">My work</h2>
+        <div className="space-y-4">
+          {info.projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
       </section>

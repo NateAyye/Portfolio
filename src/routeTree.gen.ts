@@ -16,10 +16,31 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
+const ProjectsLazyImport = createFileRoute('/projects')()
+const MyWorkLazyImport = createFileRoute('/my-work')()
+const ContactMeLazyImport = createFileRoute('/contact-me')()
 const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
+
+const ProjectsLazyRoute = ProjectsLazyImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/projects.lazy').then((d) => d.Route))
+
+const MyWorkLazyRoute = MyWorkLazyImport.update({
+  id: '/my-work',
+  path: '/my-work',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/my-work.lazy').then((d) => d.Route))
+
+const ContactMeLazyRoute = ContactMeLazyImport.update({
+  id: '/contact-me',
+  path: '/contact-me',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/contact-me.lazy').then((d) => d.Route))
 
 const AboutLazyRoute = AboutLazyImport.update({
   id: '/about',
@@ -51,6 +72,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
+    '/contact-me': {
+      id: '/contact-me'
+      path: '/contact-me'
+      fullPath: '/contact-me'
+      preLoaderRoute: typeof ContactMeLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/my-work': {
+      id: '/my-work'
+      path: '/my-work'
+      fullPath: '/my-work'
+      preLoaderRoute: typeof MyWorkLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -59,36 +101,51 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/contact-me': typeof ContactMeLazyRoute
+  '/my-work': typeof MyWorkLazyRoute
+  '/projects': typeof ProjectsLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/contact-me': typeof ContactMeLazyRoute
+  '/my-work': typeof MyWorkLazyRoute
+  '/projects': typeof ProjectsLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/contact-me': typeof ContactMeLazyRoute
+  '/my-work': typeof MyWorkLazyRoute
+  '/projects': typeof ProjectsLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/about' | '/contact-me' | '/my-work' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/about' | '/contact-me' | '/my-work' | '/projects'
+  id: '__root__' | '/' | '/about' | '/contact-me' | '/my-work' | '/projects'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   AboutLazyRoute: typeof AboutLazyRoute
+  ContactMeLazyRoute: typeof ContactMeLazyRoute
+  MyWorkLazyRoute: typeof MyWorkLazyRoute
+  ProjectsLazyRoute: typeof ProjectsLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   AboutLazyRoute: AboutLazyRoute,
+  ContactMeLazyRoute: ContactMeLazyRoute,
+  MyWorkLazyRoute: MyWorkLazyRoute,
+  ProjectsLazyRoute: ProjectsLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -102,7 +159,10 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/about",
+        "/contact-me",
+        "/my-work",
+        "/projects"
       ]
     },
     "/": {
@@ -110,6 +170,15 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.lazy.tsx"
+    },
+    "/contact-me": {
+      "filePath": "contact-me.lazy.tsx"
+    },
+    "/my-work": {
+      "filePath": "my-work.lazy.tsx"
+    },
+    "/projects": {
+      "filePath": "projects.lazy.tsx"
     }
   }
 }

@@ -1,4 +1,3 @@
-import { Client } from '@notionhq/client';
 import { createFileRoute } from '@tanstack/react-router';
 import ExperienceCard from '../../components/experienceCard';
 import ProjectCard from '../../components/projectCard';
@@ -9,13 +8,6 @@ export const Route = createFileRoute('/myWork/')({
 });
 
 function RouteComponent() {
-  const notion = new Client({  auth: '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' });
-
-  (async () => {
-    const databaseId = '17efaa279a60806fbb91d3d026ca15f6';
-    const response = await notion.databases.retrieve({ database_id: databaseId });
-    console.log(response);
-  })();
   return (
     <>
       <section>

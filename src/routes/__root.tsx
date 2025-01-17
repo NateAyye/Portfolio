@@ -12,11 +12,8 @@ export const Route = createRootRoute({
             </Link>
             <hr className="w-[150%] -translate-x-[25%] visible sm:sr-only" />
             <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row gap-3 sm:gap-6 ">
-              <Link to="/my-work" className="[&.active]:font-bold">
+              <Link to="/myWork" className="[&.active]:font-bold">
                 My Work
-              </Link>
-              <Link to="/projects" className="[&.active]:font-bold">
-                Projects
               </Link>
               <Link to="/contact-me" className="[&.active]:font-bold">
                 Contact Me

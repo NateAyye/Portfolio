@@ -13,23 +13,16 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ProjectsIndexImport } from './routes/projects/index'
-import { Route as ProjectsProjectIdImport } from './routes/projects/$projectId'
+import { Route as MyWorkIndexImport } from './routes/myWork/index'
+import { Route as MyWorkProjectIdImport } from './routes/myWork/$projectId'
 
 // Create Virtual Routes
 
-const MyWorkLazyImport = createFileRoute('/my-work')()
 const ContactMeLazyImport = createFileRoute('/contact-me')()
 const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
-
-const MyWorkLazyRoute = MyWorkLazyImport.update({
-  id: '/my-work',
-  path: '/my-work',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/my-work.lazy').then((d) => d.Route))
 
 const ContactMeLazyRoute = ContactMeLazyImport.update({
   id: '/contact-me',
@@ -49,15 +42,15 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
-const ProjectsIndexRoute = ProjectsIndexImport.update({
-  id: '/projects/',
-  path: '/projects/',
+const MyWorkIndexRoute = MyWorkIndexImport.update({
+  id: '/myWork/',
+  path: '/myWork/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProjectsProjectIdRoute = ProjectsProjectIdImport.update({
-  id: '/projects/$projectId',
-  path: '/projects/$projectId',
+const MyWorkProjectIdRoute = MyWorkProjectIdImport.update({
+  id: '/myWork/$projectId',
+  path: '/myWork/$projectId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -86,25 +79,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactMeLazyImport
       parentRoute: typeof rootRoute
     }
-    '/my-work': {
-      id: '/my-work'
-      path: '/my-work'
-      fullPath: '/my-work'
-      preLoaderRoute: typeof MyWorkLazyImport
+    '/myWork/$projectId': {
+      id: '/myWork/$projectId'
+      path: '/myWork/$projectId'
+      fullPath: '/myWork/$projectId'
+      preLoaderRoute: typeof MyWorkProjectIdImport
       parentRoute: typeof rootRoute
     }
-    '/projects/$projectId': {
-      id: '/projects/$projectId'
-      path: '/projects/$projectId'
-      fullPath: '/projects/$projectId'
-      preLoaderRoute: typeof ProjectsProjectIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/projects/': {
-      id: '/projects/'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsIndexImport
+    '/myWork/': {
+      id: '/myWork/'
+      path: '/myWork'
+      fullPath: '/myWork'
+      preLoaderRoute: typeof MyWorkIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -116,18 +102,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
   '/contact-me': typeof ContactMeLazyRoute
-  '/my-work': typeof MyWorkLazyRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/projects': typeof ProjectsIndexRoute
+  '/myWork/$projectId': typeof MyWorkProjectIdRoute
+  '/myWork': typeof MyWorkIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
   '/contact-me': typeof ContactMeLazyRoute
-  '/my-work': typeof MyWorkLazyRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/projects': typeof ProjectsIndexRoute
+  '/myWork/$projectId': typeof MyWorkProjectIdRoute
+  '/myWork': typeof MyWorkIndexRoute
 }
 
 export interface FileRoutesById {
@@ -135,36 +119,22 @@ export interface FileRoutesById {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
   '/contact-me': typeof ContactMeLazyRoute
-  '/my-work': typeof MyWorkLazyRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/projects/': typeof ProjectsIndexRoute
+  '/myWork/$projectId': typeof MyWorkProjectIdRoute
+  '/myWork/': typeof MyWorkIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/contact-me'
-    | '/my-work'
-    | '/projects/$projectId'
-    | '/projects'
+  fullPaths: '/' | '/about' | '/contact-me' | '/myWork/$projectId' | '/myWork'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/contact-me'
-    | '/my-work'
-    | '/projects/$projectId'
-    | '/projects'
+  to: '/' | '/about' | '/contact-me' | '/myWork/$projectId' | '/myWork'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact-me'
-    | '/my-work'
-    | '/projects/$projectId'
-    | '/projects/'
+    | '/myWork/$projectId'
+    | '/myWork/'
   fileRoutesById: FileRoutesById
 }
 
@@ -172,18 +142,16 @@ export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   AboutLazyRoute: typeof AboutLazyRoute
   ContactMeLazyRoute: typeof ContactMeLazyRoute
-  MyWorkLazyRoute: typeof MyWorkLazyRoute
-  ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
-  ProjectsIndexRoute: typeof ProjectsIndexRoute
+  MyWorkProjectIdRoute: typeof MyWorkProjectIdRoute
+  MyWorkIndexRoute: typeof MyWorkIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   AboutLazyRoute: AboutLazyRoute,
   ContactMeLazyRoute: ContactMeLazyRoute,
-  MyWorkLazyRoute: MyWorkLazyRoute,
-  ProjectsProjectIdRoute: ProjectsProjectIdRoute,
-  ProjectsIndexRoute: ProjectsIndexRoute,
+  MyWorkProjectIdRoute: MyWorkProjectIdRoute,
+  MyWorkIndexRoute: MyWorkIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -199,9 +167,8 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/contact-me",
-        "/my-work",
-        "/projects/$projectId",
-        "/projects/"
+        "/myWork/$projectId",
+        "/myWork/"
       ]
     },
     "/": {
@@ -213,14 +180,11 @@ export const routeTree = rootRoute
     "/contact-me": {
       "filePath": "contact-me.lazy.tsx"
     },
-    "/my-work": {
-      "filePath": "my-work.lazy.tsx"
+    "/myWork/$projectId": {
+      "filePath": "myWork/$projectId.tsx"
     },
-    "/projects/$projectId": {
-      "filePath": "projects/$projectId.tsx"
-    },
-    "/projects/": {
-      "filePath": "projects/index.tsx"
+    "/myWork/": {
+      "filePath": "myWork/index.tsx"
     }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Personal } from '../data';
 import { icons } from '../icons';
+import { Personal } from '../types';
 import { CustomDropdownMenu } from './dropdown';
 
 const PersonalCard: React.FC<Personal> = ({

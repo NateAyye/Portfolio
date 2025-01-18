@@ -1,5 +1,5 @@
 import React from 'react';
-import { Experience } from '../data';
+import { Experience } from '../types';
 
 const ExperienceCard: React.FC<Experience> = ({ title, company, date, description }) => {
   return (

@@ -1,13 +1,14 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import ExperienceCard from '../components/experienceCard';
 import PersonalCard from '../components/personalCard';
+import ProjectCard from '../components/projectCard';
 import TechMarquee from '../components/techMarquee';
 import { info } from '../data';
 import { techologyIcons } from '../icons';
-import ProjectCard from '../components/projectCard';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
+  errorComponent: () => <div>Failed to load</div>,
 });
 
 function Index() {
@@ -16,6 +17,7 @@ function Index() {
     Object.entries(techologyIcons).slice(0, iconsLength / 2),
   );
   const secondHalfIcons = Object.fromEntries(Object.entries(techologyIcons).slice(8, iconsLength));
+
   return (
     <div className="space-y-10">
       <PersonalCard {...info.personal} />

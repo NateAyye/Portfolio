@@ -37,7 +37,7 @@ function RouteComponent() {
           target="_blank"
           className="flex flex-col items-center gap-1 hover:opacity-80"
         >
-          {icons.discord.icon(50)}
+          {icons.instagram.icon(50)}
           <p className="text-xl font-bold">Instagram</p>
           <p className="text-md text-gray-400">NateAyye</p>
         </a>

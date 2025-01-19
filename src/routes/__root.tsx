@@ -74,9 +74,6 @@ export const Route = createRootRoute({
               .
             </span>
           </p>
-          <Link to="/test" className="text-accent underline">
-            test
-          </Link>
         </footer>
         {process.env.NODE_ENV === 'development' ? <TanStackRouterDevtools /> : <> </>}
       </>

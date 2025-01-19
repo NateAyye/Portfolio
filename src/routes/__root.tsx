@@ -2,9 +2,10 @@ import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 export const Route = createRootRoute({
+  
   component: () => {
     return (
-      <div>
+      <>
         <header>
           <div className="flex flex-col sm:flex-row gap-3 py-2 justify-between max-w-screen-xl mx-auto px-8 overflow-hidden">
             <Link className="font-bold text-lg sm:underline underline-offset-2" to="/">
@@ -19,7 +20,7 @@ export const Route = createRootRoute({
                 Contact Me
               </Link>
             </div>
-            <p>English</p>
+            <p></p>
           </div>
           <hr />
         </header>
@@ -76,7 +77,7 @@ export const Route = createRootRoute({
           </p>
         </footer>
         {process.env.NODE_ENV === 'development' ? <TanStackRouterDevtools /> : <> </>}
-      </div>
+      </>
     );
   },
 });

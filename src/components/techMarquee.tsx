@@ -1,8 +1,9 @@
 import React from 'react';
 import { icons } from '../icons';
+import { IconKey } from '../types';
 
 interface TechMarqueeProps {
-  icons: typeof icons;
+  icons: Partial<(typeof icons)[IconKey]>;
   speed: 'slow' | 'normal' | 'fast';
 }
 

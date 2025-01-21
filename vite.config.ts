@@ -1,16 +1,16 @@
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react-swc';
-import copy from 'rollup-plugin-copy';
 import { defineConfig } from 'vite';
+// import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vite.dev/config/
 export default defineConfig({
   base: '/Portfolio/',
-  plugins: [react(), TanStackRouterVite({ apiBase: '/Portfolio/' })],
-  build: {
-    rollupOptions: {
-      // https://rollupjs.org/configuration-options/
-      plugins: [copy({ targets: [{ src: '404.html', dest: 'dist' }] })],
-    },
-  },
+  plugins: [
+    react(),
+    TanStackRouterVite({ apiBase: '/Portfolio/' }),
+    // viteStaticCopy({
+    //   targets: [{ src: '404.html', dest: 'dist' }],
+    // }),
+  ],
 });

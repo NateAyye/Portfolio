@@ -32,6 +32,7 @@ export interface Project {
   imageUrl: string;
   repository: Link;
   links?: Link[];
+  body?: string;
 }
 
 export interface Info {

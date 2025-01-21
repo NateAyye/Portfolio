@@ -74,6 +74,7 @@ export const info: Info = {
           link: 'https://www.npmjs.com/package/svg-logo-maker',
         },
       ],
+      
     },
   ],
 };

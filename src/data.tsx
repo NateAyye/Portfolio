@@ -1,7 +1,6 @@
-import svgenImage from './assets/images/svgen.png';
-import vsCodeThemeImage from './assets/images/vscodeTheme.png';
+import svgenImage from './assets/images/projects/svgen/svgen.png';
+import vsCodeThemeImage from './assets/images/projects/vscodeTheme/vscodeTheme.png';
 import { Info } from './types';
-
 
 export const info: Info = {
   personal: {
@@ -12,10 +11,12 @@ export const info: Info = {
     email: 'nathanacuevas97@gmail.com',
     github: {
       name: 'NateAyye',
+      icon: 'github',
       link: 'https://github.com/NateAyye',
     },
     linkedin: {
       name: 'Nathan Cuevas',
+      icon: 'linkedin',
       link: 'https://www.linkedin.com/in/nathan-cuevas',
     },
   },
@@ -44,12 +45,16 @@ export const info: Info = {
       imageUrl: vsCodeThemeImage,
       repository: {
         name: 'Custom VS Code Theme',
+        icon: 'github',
         link: 'https://github.com/NateAyye/custom-github-dark-theme',
       },
-      link1: {
-        name: 'VS Code Marketplace',
-        link: 'https://marketplace.visualstudio.com/items?itemName=NathanCuevas.custom-github-dark-dimmed',
-      },
+      links: [
+        {
+          name: 'VS Code Marketplace',
+          icon: 'vscode',
+          link: 'https://marketplace.visualstudio.com/items?itemName=NathanCuevas.custom-github-dark-dimmed',
+        },
+      ],
     },
     {
       title: 'SVG Placeholder Generator',
@@ -59,12 +64,16 @@ export const info: Info = {
       imageUrl: svgenImage,
       repository: {
         name: 'SVG Placeholder Generator',
+        icon: 'github',
         link: 'https://github.com/NateAyye/svg-logo-maker',
       },
-      link1: {
-        name: 'NPM Package',
-        link: 'https://www.npmjs.com/package/svg-logo-maker',
-      },
+      links: [
+        {
+          name: 'NPM Package',
+          icon: 'npm',
+          link: 'https://www.npmjs.com/package/svg-logo-maker',
+        },
+      ],
     },
   ],
 };

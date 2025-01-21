@@ -1,7 +1,7 @@
 import React from 'react';
 import { icons } from '../icons';
 import { Personal } from '../types';
-import { CustomDropdownMenu } from './dropdown';
+import { CustomDropdownMenu } from './ui/dropdown';
 
 const PersonalCard: React.FC<Personal> = ({
   name,

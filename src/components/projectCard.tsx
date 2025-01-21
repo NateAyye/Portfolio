@@ -6,7 +6,15 @@ import { Project } from '../types';
 const ProjectCard: React.FC<Project> = ({ imageUrl, title, tech }) => {
   return (
     <div className="overflow-hidden relative rounded-lg group focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-      <Link to={'/myWork/$projectId'} params={{ projectId: title }} className="block ">
+      <Link
+        to={'/myWork/$projectId'}
+        aria-describedby={title}
+        params={{ projectId: title }}
+        className="block "
+      >
+        <div id={title} className="sr-only">
+          {title} project page
+        </div>
         <div
           style={{ backgroundImage: `url(${imageUrl})` }}
           className="shadow-accent/80 shadow-[inset_0_-40px_70px_10px] bg-cover bg-center bg-no-repeat h-96  group-hover:scale-105 transform transition-transform duration-300 ease-in-out "

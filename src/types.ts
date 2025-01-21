@@ -1,10 +1,11 @@
-export interface Icon {
-  name: string;
-  icon: (size?: number) => JSX.Element;
-}
+import { icons, techologyIcons } from './icons';
 
+export type TechIconKey = keyof typeof techologyIcons;
+
+export type IconKey = keyof typeof icons;
 export interface Link {
   name: string;
+  icon: TechIconKey | IconKey;
   link: string;
 }
 
@@ -27,11 +28,10 @@ export interface Personal {
 export interface Project {
   title: string;
   description: string;
-  tech: string[];
+  tech: TechIconKey[];
   imageUrl: string;
   repository: Link;
-  link1?: Link;
-  link2?: Link;
+  links?: Link[];
 }
 
 export interface Info {

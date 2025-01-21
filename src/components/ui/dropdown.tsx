@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { icons } from '../icons';
-import { cn } from '../lib/utils';
+import { icons } from '../../icons';
+import { cn } from '../../utils/utils';
 
 interface CustomDropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   buttonText?: string;
@@ -53,9 +53,7 @@ export function CustomDropdownMenu({
               <p className="text-sm font-medium text-gray-900">{menuLabel}</p>
             </div>
           )}
-          <div className="p-1">
-            {children}
-          </div>
+          <div className="p-1">{children}</div>
         </div>
       )}
     </div>

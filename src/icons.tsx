@@ -1,11 +1,7 @@
-import { Icon } from "./types";
-
-export const icons: {
-  [key: string]: Icon;
-} = {
+export const icons = {
   mail: {
     name: 'mail',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -26,7 +22,7 @@ export const icons: {
   },
   github: {
     name: 'Github',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         width={size ?? '30'}
         height={size ?? '30'}
@@ -45,7 +41,7 @@ export const icons: {
   },
   locationPin: {
     name: 'locationPin',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         width={size ?? '15'}
         height={size ?? '15'}
@@ -64,7 +60,7 @@ export const icons: {
   },
   discord: {
     name: 'Discord',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '24'}
@@ -80,7 +76,7 @@ export const icons: {
   },
   linkedin: {
     name: 'Linkedin',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -104,7 +100,7 @@ export const icons: {
   },
   instagram: {
     name: 'Instagram',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -126,7 +122,7 @@ export const icons: {
   },
   chevronDown: {
     name: 'chevronDown',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -144,14 +140,59 @@ export const icons: {
       </svg>
     ),
   },
+  gitBranch: {
+    name: 'gitBranch',
+    icon: (size?: number) => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size ?? '30'}
+        height={size ?? '30'}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="icon icon-tabler icons-tabler-outline icon-tabler-git-branch"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M7 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M7 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M17 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M7 8l0 8" />
+        <path d="M9 18h6a2 2 0 0 0 2 -2v-5" />
+        <path d="M14 14l3 -3l3 3" />
+      </svg>
+    ),
+  },
+  externalLink: {
+    name: 'externalLink',
+    icon: (size?: number) => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size ?? '30'}
+        height={size ?? '30'}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="icon icon-tabler icons-tabler-outline icon-tabler-external-link"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+        <path d="M11 13l9 -9" />
+        <path d="M15 4h5v5" />
+      </svg>
+    ),
+  },
 } as const;
 
-export const techologyIcons: {
-  [key: string]: Icon;
-} = {
+export const techologyIcons = {
   github: {
     name: 'Github',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         width={size ?? '30'}
         height={size ?? '30'}
@@ -170,7 +211,7 @@ export const techologyIcons: {
   },
   typescript: {
     name: 'TypeScript',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -193,7 +234,7 @@ export const techologyIcons: {
   },
   javascript: {
     name: 'JavaScript',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -215,7 +256,7 @@ export const techologyIcons: {
   },
   html: {
     name: 'HTML',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -236,7 +277,7 @@ export const techologyIcons: {
   },
   css: {
     name: 'CSS',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -257,7 +298,7 @@ export const techologyIcons: {
   },
   tailwind: {
     name: 'Tailwindcss',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -277,7 +318,7 @@ export const techologyIcons: {
   },
   react: {
     name: 'React',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -303,7 +344,7 @@ export const techologyIcons: {
   },
   vite: {
     name: 'Vite',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -324,7 +365,7 @@ export const techologyIcons: {
   },
   next: {
     name: 'Nextjs',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -345,7 +386,7 @@ export const techologyIcons: {
   },
   nodejs: {
     name: 'Nodejs',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -366,7 +407,7 @@ export const techologyIcons: {
   },
   npm: {
     name: 'NPM',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -392,7 +433,7 @@ export const techologyIcons: {
   },
   git: {
     name: 'Git',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -418,7 +459,7 @@ export const techologyIcons: {
   },
   adobe: {
     name: 'Adobe',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -438,7 +479,7 @@ export const techologyIcons: {
   },
   postgres: {
     name: 'Postgresql',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -456,7 +497,7 @@ export const techologyIcons: {
   },
   mysql: {
     name: 'Mysql',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -477,7 +518,7 @@ export const techologyIcons: {
   },
   expressjs: {
     name: 'Expressjs',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -499,7 +540,7 @@ export const techologyIcons: {
   },
   vscode: {
     name: 'VSCode',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}
@@ -521,7 +562,7 @@ export const techologyIcons: {
   },
   jest: {
     name: 'Jest',
-    icon: (size) => (
+    icon: (size?: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size ?? '30'}

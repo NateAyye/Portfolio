@@ -7,15 +7,19 @@ export const Route = createRootRoute({
       <>
         <header>
           <div className="flex flex-col sm:flex-row gap-3 py-2 justify-between max-w-screen-xl mx-auto px-8 overflow-hidden">
-            <Link className="font-bold text-lg sm:underline underline-offset-2" to="/">
+            <Link
+              preload="intent"
+              className="font-bold text-lg sm:underline underline-offset-2"
+              to="/"
+            >
               Nathan Cuevas
             </Link>
             <hr className="w-[150%] -translate-x-[25%] visible sm:sr-only" />
             <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row gap-3 sm:gap-6 ">
-              <Link to="/myWork" className="[&.active]:font-bold">
+              <Link to="/myWork" preload="intent" className="[&.active]:font-bold">
                 My Work
               </Link>
-              <Link to="/contact-me" className="[&.active]:font-bold">
+              <Link to="/contact-me" preload="intent" className="[&.active]:font-bold">
                 Contact Me
               </Link>
             </div>
